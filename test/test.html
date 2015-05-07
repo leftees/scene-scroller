@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>SceneScroller Test Suite</title>
+    <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
+
+    <!-- Dark theme -->
+    <style type="text/css">
+      body.dark {
+        background-color: #181818;
+        color: #ccc;
+      }
+      body.dark #mocha-stats em {
+        color: #ccc;
+      }
+    </style>
+</head>
+<body>
+    <!-- Required for browser reporter -->
+    <div id="mocha"></div>
+
+    <!-- Mocha -->
+    <script type="text/javascript" src="../bower_components/mocha/mocha.js"></script>
+
+    <!-- Chai -->
+    <script src="../bower_components/chai/chai.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        // Setup chai
+        var expect = chai.expect
+          , assert = chai.assert
+    </script>
+
+    <!-- Our script we want to test -->
+    <script type="text/javascript" src="./scenescroller.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        mocha.setup('bdd')
+          .globals(['SceneScroller']) // acceptable globals
+    </script>
+
+    <!-- Our test script -->
+    <script type="text/javascript" src="./test.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        // Run Mocha
+        if(typeof mochaPhantomJS !== 'undefined') {
+          mochaPhantomJS.run()
+        } else {
+          mocha.run()
+        }
+    </script>
+</body>
+</html>

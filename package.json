@@ -1,0 +1,49 @@
+{
+  "name": "scene-scroller",
+  "version": "0.1.0",
+  "description": "A library for creating side-scrolling canvas games and interactive animations",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dav-/scene-scroller.git"
+  },
+  "keywords": [
+    "sidescroller",
+    "side",
+    "scroller",
+    "animation",
+    "scenescroller",
+    "game"
+  ],
+  "author": "Derrick Cohodas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dav-/scene-scroller/issues"
+  },
+  "homepage": "https://github.com/dav-/scene-scroller",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-connect": "^2.2.0",
+    "gulp-if": "^1.2.5",
+    "gulp-ignore": "^1.2.1",
+    "gulp-mocha-phantomjs": "^0.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4",
+    "lazypipe": "^0.2.3",
+    "lodash": "^3.6.0",
+    "mocha": "^2.2.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.1.1"
+  }
+}

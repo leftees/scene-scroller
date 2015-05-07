@@ -1,0 +1,33 @@
+{
+  "name": "scene-scroller",
+  "version": "0.1.0",
+  "homepage": "https://github.com/dav-/scene-scroller",
+  "authors": [
+    "dav- <derrick@cohodas.me>"
+  ],
+  "description": "A library for creating side-scrolling canvas games and interactive animations",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "sidescroller",
+    "side",
+    "scroller",
+    "animation",
+    "scenescroller",
+    "game"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "mocha": "~2.2.4",
+    "lodash": "~3.8.0",
+    "chai": "~2.3.0"
+  }
+}
