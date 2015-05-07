@@ -3,4 +3,4 @@ bower_components
 .DS_Store
 .*.swp
 build
-.grunt.out
+.gulp.out
