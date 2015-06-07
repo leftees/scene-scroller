@@ -6,10 +6,6 @@ class Entity {
     this.created = new Date()
   }
 
-  foo(bar) {
-    console.log("foobar: " + bar)
-  }
-
 }
 
 module.exports = Entity
