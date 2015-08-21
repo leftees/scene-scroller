@@ -14,6 +14,9 @@
       body.dark #mocha-stats em {
         color: #ccc;
       }
+      body.dark .test.fail pre code {
+        color: #ccc;
+      }
     </style>
 </head>
 <body>
@@ -49,6 +52,19 @@
         } else {
           mocha.run()
         }
+    </script>
+    <script>
+      window.location.search
+        .substr(1)
+        .split('&')
+        .map(function(s) {
+            return s.split('=')
+          })
+        .forEach(function(e) {
+          if(e[0] === 'theme') {
+            document.body.classList.add(e[1])
+          }
+        })
     </script>
 </body>
 </html>
