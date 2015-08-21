@@ -2,7 +2,8 @@
 'use strict';
 
 var SceneScroller =
-  { Entity : require("./entity")
+  { EventEmitter : require('./eventemitter')
+  , Entity       : require('./entity')
   }
 
 module.exports = SceneScroller
