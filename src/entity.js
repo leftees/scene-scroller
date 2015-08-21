@@ -1,8 +1,11 @@
 'use strict';
 
-class Entity {
+var EventEmitter = require('./eventemitter')
 
-  constructor() {
+class Entity extends EventEmitter {
+
+  constructor(...args) {
+    super(...args)
     this.created = new Date()
   }
 
