@@ -1,12 +1,17 @@
 'use strict';
 
-var EventEmitter = require('./eventemitter')
+var Node = require('./node')
 
-class Entity extends EventEmitter {
+var util = require('./util.js')
 
-  constructor(...args) {
-    super(...args)
+class Entity extends Node {
+
+  constructor(...rest) {
+
+    super(...rest)
+
     this.created = new Date()
+
   }
 
 }
