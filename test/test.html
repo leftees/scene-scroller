@@ -3,6 +3,16 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>SceneScroller Test Suite</title>
+
+    <!-- Mocha -->
+    <script type="text/javascript" src="../bower_components/mocha/mocha.js"></script>
+
+    <!-- Chai -->
+    <script src="../bower_components/chai/chai.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Babel Polyfill -->
+    <script type="text/javascript" src="../node_modules/babel/node_modules/babel-core/browser-polyfill.min.js"></script>
+
     <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
 
     <!-- Dark theme -->
@@ -23,11 +33,6 @@
     <!-- Required for browser reporter -->
     <div id="mocha"></div>
 
-    <!-- Mocha -->
-    <script type="text/javascript" src="../bower_components/mocha/mocha.js"></script>
-
-    <!-- Chai -->
-    <script src="../bower_components/chai/chai.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
         // Setup chai
         var expect = chai.expect
