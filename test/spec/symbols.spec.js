@@ -12,6 +12,9 @@ describe('symbols', () => {
 
   it('required', () => {
     assert(isSymbol(symbols.required))
+  })
+
+  it('optional', () => {
     assert(isSymbol(symbols.optional))
   })
 
