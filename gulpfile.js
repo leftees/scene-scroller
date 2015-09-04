@@ -20,6 +20,7 @@ var babel    = require('gulp-babel')
   , connect  = require('gulp-connect')
   , gulpif   = require('gulp-if')
   , ignore   = require('gulp-ignore')
+  , jsdoc    = require('gulp-jsdoc-to-markdown')
   , srcmap   = require('gulp-sourcemaps')
   , uglify   = require('gulp-uglify')
   , gutil    = require('gulp-util')
@@ -39,6 +40,7 @@ config.paths =
   , build : 'build'
   , test  : 'test'
   , bower : 'bower_components'
+  , doc   : 'doc/jsdoc'
   }
 
 config.files =
@@ -123,10 +125,6 @@ gulp.task('test-init', ['connect', 'build-src-watch', 'build-test-watch'], funct
   gulp.start(['test'])
 })
 
-gulp.task('test-init', ['connect', 'build-src-watch', 'build-test-watch'], function() {
-  gulp.start(['test'])
-})
-
 gulp.task('test-ci-init', ['connect', 'build-src', 'build-test'], function() {
   gulp.start(['test-ci'])
 })
@@ -137,6 +135,12 @@ gulp.task('test', function() {
   }
   var stream = mocha({ reporter: 'spec' })
   stream.write({ path: 'http://localhost:8080/build/test.html' })
+  stream.once('error', function(err) {
+    gulp.start(['reload'])
+  })
+  stream.once('end', function() {
+    gulp.start(['reload'])
+  })
   stream.end()
   return stream
 })
@@ -157,8 +161,20 @@ gulp.task('test-ci', function() {
   return stream
 })
 
+gulp.task('doc', function() {
+  return gulp.src(path.join(config.paths.base, config.paths.src, '*.js'))
+    .pipe(jsdoc())
+    .on("error", function(err){
+      gutil.log(gutil.colors.red("jsdoc2md failed"), err.message)
+    })
+    .pipe(rename(function(path) {
+      path.extname = '.md'
+    }))
+    .pipe(gulp.dest(path.join(config.paths.base, config.paths.doc)))
+})
+
 gulp.task('build-src', function(callback) {
-  gulp.start(['html-src'])
+  gulp.start(['html-src', 'doc'])
   var opts      = _.assign({}, watchify.args, config.browserify.src)
     , srcBundle = watchify(browserify(opts))
 
@@ -196,6 +212,8 @@ gulp.task('build-src-watch', ['build-src'], function() {
 
   return b.bundle.on('update', function(e) {
 
+    gulp.start(['doc'])
+
     var filenames = _.map(e, function(filepath) {
       return path.basename(filepath)
     })
@@ -219,7 +237,7 @@ gulp.task('build-test', function(callback) {
   var opts       = _.assign({}, watchify.args, config.browserify.test)
     , testBundle = watchify(browserify(opts))
 
-  var testPipe =lazypipe()
+  var testPipe = lazypipe()
     .pipe(function() {
       return source(path.join(config.paths.base, config.paths.test, config.files.test))
     })
