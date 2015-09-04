@@ -123,12 +123,36 @@ gulp.task('test-init', ['connect', 'build-src-watch', 'build-test-watch'], funct
   gulp.start(['test'])
 })
 
+gulp.task('test-init', ['connect', 'build-src-watch', 'build-test-watch'], function() {
+  gulp.start(['test'])
+})
+
+gulp.task('test-ci-init', ['connect', 'build-src', 'build-test'], function() {
+  gulp.start(['test-ci'])
+})
+
 gulp.task('test', function() {
   if(!g.connect){
     return gulp.start(['test-init'])
   }
   var stream = mocha({ reporter: 'spec' })
   stream.write({ path: 'http://localhost:8080/build/test.html' })
+  stream.end()
+  return stream
+})
+
+gulp.task('test-ci', function() {
+  if(!g.connect){
+    return gulp.start(['test-ci-init'])
+  }
+  var stream = mocha({ reporter: 'spec' })
+  stream.write({ path: 'http://localhost:8080/build/test.html' })
+  stream.once('error', function(err) {
+    process.exit(1)
+  })
+  stream.once('end', function() {
+    process.exit(0)
+  })
   stream.end()
   return stream
 })
