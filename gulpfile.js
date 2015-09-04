@@ -48,6 +48,11 @@ config.files =
   , test : 'test'
   }
 
+config.filePaths =
+  { main : path.join(config.paths.base, config.paths.src, config.files.main)
+  , test : path.join(config.paths.base, config.paths.test, config.files.test)
+  }
+
 config.envs =
   { dev  :
     { name : 'dev'
@@ -63,11 +68,11 @@ config.envs =
 config.browserify =
   { src:
     { debug   : true
-    , entries : ['./' + path.join(config.paths.base, config.paths.src, config.files.main)]
+    , entries : ['./' + config.filePaths.main ]
     }
   , test:
     { debug   : true
-    , entries : ['./' + path.join(config.paths.base, config.paths.test, config.files.test)]
+    , entries : ['./' + config.filePaths.test ]
     }
   }
 
