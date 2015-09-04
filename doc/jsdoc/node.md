@@ -2,7 +2,11 @@
 ## Node ⇐ <code>EventEmitter</code>
 **Kind**: global class  
 **Extends:** <code>EventEmitter</code>  
-**See**: [Constructor Conventions](../conventions-constructor.md)  
+**See**
+
+- [EventEmitter](./eventemitter.md)
+- [Constructor Conventions](../conventions-constructor.md)
+
 <a name="new_Node_new"></a>
 ### new Node([parent])
 

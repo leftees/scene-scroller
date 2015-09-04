@@ -1,12 +1,8 @@
 /**
- * SceneScroller.EventEmitter
- * (c) 2015 Derrick Cohodas
- * MIT License
- *
- * Based on Oliver Caldwell's EventEmitter @ v4.2.11 (git.io/ee)
- * (Original License: Unlicense - http://unlicense.org/)
- *
  * @module EventEmitter
+ * @copyright 2015 Derrick Cohodas
+ * @license MIT
+ * @see [EventEmitter by Oliver Caldwell](git.ee/ee)
  */
 
 'use strict';

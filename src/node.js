@@ -11,6 +11,7 @@ var util    = require('./util')
 /**
  * @class Node
  * @extends EventEmitter
+ * @see [EventEmitter](./eventemitter.md)
  * @see [Constructor Conventions](../conventions-constructor.md)
  * @param {Node} [parent=null] The parent of this Node. Can be an instance of Node or any of its descendant classes.
  */
