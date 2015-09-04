@@ -145,7 +145,7 @@ gulp.task('test-ci', function() {
   if(!g.connect){
     return gulp.start(['test-ci-init'])
   }
-  var stream = mocha({ reporter: 'spec' })
+  var stream = mocha({ reporter: 'tap' })
   stream.write({ path: 'http://localhost:8080/build/test.html' })
   stream.once('error', function(err) {
     process.exit(1)
