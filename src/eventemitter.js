@@ -5,6 +5,8 @@
  *
  * Based on Oliver Caldwell's EventEmitter @ v4.2.11 (git.io/ee)
  * (Original License: Unlicense - http://unlicense.org/)
+ *
+ * @module EventEmitter
  */
 
 'use strict';

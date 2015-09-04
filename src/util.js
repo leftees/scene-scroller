@@ -1,3 +1,6 @@
+/**
+ * @module util
+ */
 'use strict';
 
 var symbols = require('./symbols')

@@ -1,3 +1,6 @@
+/*
+ * @module symbols
+ */
 'use strict';
 
 var symbols = {}
