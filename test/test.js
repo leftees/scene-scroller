@@ -8,4 +8,5 @@ var specs =
   , require('./spec/entity.spec')
   , require('./spec/util.spec.js')
   , require('./spec/symbols.spec.js')
+  , require('./spec/scene.spec.js')
   ]
