@@ -1,0 +1,13 @@
+engines:
+  eslint:
+
+ratings:
+  paths:
+  - src/**
+  - "**.js"
+
+exclude_paths:
+- test/**/*
+- doc/**/*
+- "gulpfile.js"
+
