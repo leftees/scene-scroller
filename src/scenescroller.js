@@ -35,6 +35,12 @@ SceneScroller.Node = require('./node')
 SceneScroller.Entity = require('./entity')
 
 /**
+ * @property {Class} Scene
+ * @see [Scene](./scene.md)
+ */
+SceneScroller.Scene= require('./scene')
+
+/**
  * @property {Object} symbols
  * @see [symbols](./symbols.md)
  */
