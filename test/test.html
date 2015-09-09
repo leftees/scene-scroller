@@ -13,6 +13,9 @@
     <!-- Babel Polyfill -->
     <script type="text/javascript" src="../node_modules/babel/node_modules/babel-core/browser-polyfill.min.js"></script>
 
+    <!-- Moment.js -->
+    <script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
+
     <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
 
     <!-- Dark theme -->
@@ -26,6 +29,10 @@
       }
       body.dark .test.fail pre code {
         color: #ccc;
+      }
+      body.dark .progress > canvas {
+        background-color: #eee;
+        border-radius: 21px;
       }
     </style>
 </head>
@@ -57,6 +64,23 @@
         } else {
           mocha.run()
         }
+
+        var finished = moment()
+
+        mocha.suite.afterAll('complete', function() {
+          var mochaStats = document.getElementById('mocha-stats')
+          if(!mochaStats) return
+
+          var li = document.createElement('li')
+          li.setAttribute('class', 'elapsed')
+          li.innerHTML = '<a href="#">finished:</a> <em id="elapsed-time">' + finished.fromNow() + '</em>'
+
+          mochaStats.appendChild(li)
+
+          setInterval(function() {
+            document.getElementById('elapsed-time').innerHTML = finished.fromNow()
+          }, 1000)
+        })
     </script>
     <script>
       window.location.search
