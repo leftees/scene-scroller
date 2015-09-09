@@ -9,5 +9,6 @@ ratings:
 exclude_paths:
 - test/**/*
 - doc/**/*
+- "doc/exploration.js"
 - "gulpfile.js"
 
