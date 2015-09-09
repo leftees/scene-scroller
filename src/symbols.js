@@ -12,13 +12,11 @@ var symbols = {}
 
 /**
  * @property {Symbol} required Signifies a required option, argument, etc.
- * @constant
  */
 symbols.required = s('required')
 
 /**
  * @property {Symbol} options Signifies an optional option, argument, etc.
- * @constant
  */
 symbols.optional = s('optional')
 
