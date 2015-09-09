@@ -5,18 +5,24 @@
 
 var Node = require('./node')
 
-var util = require('./util.js')
+var util = require('./util')
 
 /**
  * @class Entity
  * @extends Node
  * @see [Node](./node.md)
  * @see [Constructor Conventions](../conventions-constructor.md)
- * @param {Object} opts Relevant opts: _none_. Rest passed to `Node`.
  */
 class Entity extends Node {
   constructor() {
-    super()
+
+    var defaults =
+      {
+      }
+
+    var [ opts, rest ] = util.parseOpts(arguments[0], defaults)
+
+    super(rest)
 
     /**
      * @property {Date} created Date corresponding to creation time of the Entity.
