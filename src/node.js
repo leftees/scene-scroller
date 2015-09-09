@@ -144,7 +144,7 @@ class Node extends EventEmitter {
    *
    * @fires Node#change
    * @fires Node#change:parent
-   */
+   **/
   setParent(parent, { addChild = local.true }={}) {
     if(parent === null) {
       return this
