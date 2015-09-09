@@ -1,5 +1,6 @@
 engines:
-  eslint: enabled
+  eslint:
+  enabled: true
 
 ratings:
   paths:
