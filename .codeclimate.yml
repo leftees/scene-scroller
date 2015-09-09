@@ -1,11 +1,6 @@
 languages:
   JavaScript: true
 
-ratings:
-  paths:
-  - src/**/*
-  - src/node.js # Codeclimate seems to ignore this file by default
-
 exclude_paths:
 - test/**/*
 - doc/**/*
