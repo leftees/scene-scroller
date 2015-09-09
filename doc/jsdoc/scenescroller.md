@@ -7,6 +7,7 @@
     * [.EventEmitter](#module_SceneScroller..SceneScroller.EventEmitter)
     * [.Node](#module_SceneScroller..SceneScroller.Node)
     * [.Entity](#module_SceneScroller..SceneScroller.Entity)
+    * [.Scene](#module_SceneScroller..SceneScroller.Scene)
     * [.symbols](#module_SceneScroller..SceneScroller.symbols)
     * [.util](#module_SceneScroller..SceneScroller.util)
 
@@ -19,6 +20,7 @@
   * [.EventEmitter](#module_SceneScroller..SceneScroller.EventEmitter)
   * [.Node](#module_SceneScroller..SceneScroller.Node)
   * [.Entity](#module_SceneScroller..SceneScroller.Entity)
+  * [.Scene](#module_SceneScroller..SceneScroller.Scene)
   * [.symbols](#module_SceneScroller..SceneScroller.symbols)
   * [.util](#module_SceneScroller..SceneScroller.util)
 
@@ -60,6 +62,16 @@
 | Name | Type |
 | --- | --- |
 | Entity | <code>Class</code> | 
+
+<a name="module_SceneScroller..SceneScroller.Scene"></a>
+#### SceneScroller.Scene
+**Kind**: static property of <code>[SceneScroller](#module_SceneScroller..SceneScroller)</code>  
+**See**: [Scene](./scene.md)  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| Scene | <code>Class</code> | 
 
 <a name="module_SceneScroller..SceneScroller.symbols"></a>
 #### SceneScroller.symbols
