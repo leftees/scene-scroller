@@ -16,7 +16,7 @@
 
 <a name="module_symbols..symbols.required"></a>
 #### symbols.required
-**Kind**: static constant of <code>[symbols](#module_symbols..symbols)</code>  
+**Kind**: static property of <code>[symbols](#module_symbols..symbols)</code>  
 **Properties**
 
 | Name | Type | Description |
@@ -25,7 +25,7 @@
 
 <a name="module_symbols..symbols.optional"></a>
 #### symbols.optional
-**Kind**: static constant of <code>[symbols](#module_symbols..symbols)</code>  
+**Kind**: static property of <code>[symbols](#module_symbols..symbols)</code>  
 **Properties**
 
 | Name | Type | Description |
